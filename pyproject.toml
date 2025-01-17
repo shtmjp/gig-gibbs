@@ -1,0 +1,23 @@
+[build-system]
+requires = ["maturin>=1.8,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "gig-gibbs"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+dependencies = ["numpy>=2.2.1"]
+
+[tool.maturin]
+python-source = "python"
+
+[dependency-groups]
+dev = ["matplotlib>=3.10.0", "pytest>=8.3.4", "scipy==1.15.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
